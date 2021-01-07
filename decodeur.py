@@ -79,7 +79,7 @@ def print_menu(with_logo=True):
 def on_press(key):
 	if key == keyboard.KeyCode(char = '1'):
 		print("Modulating the volume of the TV\n")
-		modulate_volume(10)
+		modulate_volume(15)
 		print_menu(False)
 	elif key == keyboard.KeyCode(char = '2'):
 		print("Switching channels randomly")
@@ -95,6 +95,7 @@ def on_press(key):
 		print("[!] Wrong command, please chose one of the followings options")
 
 #main
+
 fuse = int(input("Execute command in x seconds : "))
 print("Your commands will be executed in " + str(fuse) + " seconds")
 print_menu()
@@ -102,6 +103,3 @@ print_menu()
 with keyboard.Listener(
         on_press=on_press) as listener:
     listener.join()
-
-		
-
